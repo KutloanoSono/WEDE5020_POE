@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit an enquiry to NextGen Coders Academy.">
+    <title>Enquiry | NextGen Coders Academy</title>
+</head>
+
+<body>
+
+<!-- ====== Header =======-->
+<header>
+    <!-- The Academy Logo -->
+    <img src="images_/Logo.jpeg" alt="NextGen Coders Academy Logo" width="120" height="120" 
+       style="border-radius:50%;
+       object-fit:cover;">
+       
+    <h1>NextGen Coders Academy</h1>
+
+    <!-- Main Navigation -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Us</a> |
+        <a href="courses.html">Courses</a> |
+        <a href="enquiry.html">Enquiry</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+    <!-- Enquiry Form Section -->
+    <section>
+        <h2>Course Enquiry</h2>
+
+        <p>
+            Interested in joining NextGen Coders Academy? Complete the
+            form below and let us know which course you are interested in.
+        </p>
+
+        <!-- Enquiry Form -->
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <br><br>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <br><br>
+            </fieldset>
+
+            <br>
+
+            <!-- Course selection and enquiry details -->
+            <fieldset>
+                <legend>Course Information</legend>
+
+                <label for="course">Choose a Course:</label>
+
+                <select id="course" name="course" required>
+                    <option value=""> Select a course </option>
+                    <option value="web-development">Web Development</option>
+                    <option value="python">Python Programming</option>
+                    <option value="java">Java Programming</option>
+                    <option value="cybersecurity">
+                        Cybersecurity Fundamentals
+                    </option>
+                </select>
+
+                <br><br>
+
+                <label for="experience">Previous Coding Experience:</label>
+                <br>
+
+                <textarea
+                    id="experience"
+                    name="experience"
+                    rows="5"
+                    cols="40"
+                    placeholder="Tell us about your coding experience..."
+                ></textarea>
+
+                <br><br>
+
+                <label for="message">Your Enquiry:</label>
+                <br>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    cols="40"
+                    placeholder="Enter your question or enquiry..."
+                    required
+                ></textarea>
+            </fieldset>
+
+            <br>
+
+            <button type="submit">Submit Enquiry</button>
+            <button type="reset">Clear Form</button>
+
+        </form>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 NextGen Coders Academy. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
