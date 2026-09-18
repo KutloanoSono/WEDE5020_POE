@@ -1,0 +1,454 @@
+/* =========================================================
+   NextGen Coders Academy — style.css
+   WEDE5020 POE — Part 2: CSS Styling & Responsive Design
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   2.1 / 2.2  CSS RESET & BASE (DEFAULT) STYLES
+   --------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colour scheme */
+    --colour-primary: #1b2a4a;      /* deep navy - header/footer/headings */
+    --colour-secondary: #2e6ff2;    /* bright blue - links/buttons/accents */
+    --colour-accent: #00c2a8;       /* teal - hover/accent highlights */
+    --colour-bg: #f5f7fb;           /* light background */
+    --colour-surface: #ffffff;      /* card/section background */
+    --colour-text: #232733;         /* main body text */
+    --colour-text-light: #5a6270;   /* secondary/muted text */
+    --colour-border: #dfe3ec;
+
+    /* Typography scale (rem based) */
+    --font-base: 1rem;
+    --font-h1: 2.25rem;
+    --font-h2: 1.75rem;
+    --font-h3: 1.25rem;
+    --font-small: 0.875rem;
+
+    /* Spacing */
+    --space-sm: 0.75rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+}
+
+html {
+    /* 1rem = 16px, scales with user/browser settings for accessibility */
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+    font-size: var(--font-base);
+    line-height: 1.6;
+    color: var(--colour-text);
+    background-color: var(--colour-bg);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--colour-secondary);
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+
+/* ---------------------------------------------------------
+   2.3  TYPOGRAPHY STYLES
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+    font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--colour-primary);
+    margin-bottom: var(--space-sm);
+}
+
+h1 {
+    font-size: var(--font-h1);
+    color: var(--colour-surface);
+    letter-spacing: 0.03em;
+}
+
+h2 {
+    font-size: var(--font-h2);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Small decorative underline under every h2 - reused across pages */
+h2::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: var(--colour-accent);
+    margin-top: 0.4rem;
+    border-radius: 0.2rem;
+}
+
+h3 {
+    font-size: var(--font-h3);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+    color: var(--colour-text-light);
+    max-width: 70ch; /* keeps line length readable */
+}
+
+
+/* ---------------------------------------------------------
+   2.4  LAYOUT STRUCTURE (Flexbox + Grid)
+   --------------------------------------------------------- */
+
+/* ---- Header layout ---- */
+header {
+    background-color: var(--colour-primary);
+    color: var(--colour-surface);
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+header img {
+    flex-shrink: 0;
+    border: 3px solid var(--colour-accent);
+}
+
+header p {
+    color: #c9d3e6;
+    flex-basis: 100%;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+/* ---- Navigation layout ---- */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    flex-basis: 100%;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0.5rem;
+}
+
+nav a {
+    color: var(--colour-surface);
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.35rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---- Main content layout ---- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+main > section,
+main > article {
+    background-color: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: 0.75rem;
+    padding: var(--space-md);
+    box-shadow: 0 4px 14px rgba(27, 42, 74, 0.06);
+}
+
+/* Grid layout for pages that have several stacked cards side-by-side
+   (Courses page articles, About Us sections) */
+#courses-grid,
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+/* Two-column layout for the home page introduction (image + text) */
+.intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   2.5  DECORATION & VISUAL / COLOUR STYLES
+   --------------------------------------------------------- */
+
+main img {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 14px rgba(27, 42, 74, 0.12);
+    border: 1px solid var(--colour-border);
+}
+
+ul li,
+ol li {
+    margin-bottom: 0.35rem;
+}
+
+address {
+    font-style: normal;
+    background-color: var(--colour-bg);
+    border-left: 4px solid var(--colour-accent);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0.35rem;
+}
+
+footer {
+    background-color: var(--colour-primary);
+    color: #c9d3e6;
+    text-align: center;
+    padding: var(--space-md);
+    font-size: var(--font-small);
+}
+
+
+/* ---- Buttons & form styling ---- */
+fieldset {
+    border: 1px solid var(--colour-border);
+    border-radius: 0.5rem;
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+legend {
+    font-weight: 700;
+    color: var(--colour-primary);
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--colour-text);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: var(--space-sm);
+    border: 1px solid var(--colour-border);
+    border-radius: 0.4rem;
+    font-family: inherit;
+    font-size: var(--font-base);
+    background-color: var(--colour-bg);
+    color: var(--colour-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button {
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 600;
+    padding: 0.65rem 1.4rem;
+    margin-right: var(--space-sm);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--colour-secondary);
+    color: var(--colour-surface);
+}
+
+button[type="reset"] {
+    background-color: var(--colour-border);
+    color: var(--colour-text);
+}
+
+
+/* ---------------------------------------------------------
+   2.5 (cont.) PSEUDO-CLASSES — INTERACTIVE ELEMENTS
+   --------------------------------------------------------- */
+
+/* Navigation links */
+nav a:hover,
+nav a:focus {
+    background-color: var(--colour-accent);
+    color: var(--colour-primary);
+    outline: none;
+}
+
+nav a:active {
+    background-color: #00a58f;
+}
+
+/* Inline text links (e.g. "Explore Our Courses", "Make an Enquiry") */
+main a:hover,
+main a:focus {
+    color: var(--colour-accent);
+    text-decoration: underline;
+}
+
+main a:active {
+    color: var(--colour-primary);
+}
+
+/* Form fields */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--colour-secondary);
+    box-shadow: 0 0 0 3px rgba(46, 111, 242, 0.18);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--colour-text-light);
+}
+
+/* Buttons */
+button[type="submit"]:hover {
+    background-color: #1c53c9;
+}
+
+button[type="submit"]:active {
+    background-color: var(--colour-primary);
+    transform: scale(0.98);
+}
+
+button[type="reset"]:hover {
+    background-color: #c9cfdb;
+}
+
+button[type="reset"]:active {
+    transform: scale(0.98);
+}
+
+/* List items in the courses/article cards */
+article:hover {
+    box-shadow: 0 6px 18px rgba(27, 42, 74, 0.14);
+}
+
+
+/* =========================================================
+   3. RESPONSIVE DESIGN
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   3.1 / 3.2  TABLET BREAKPOINT (max-width: 768px)
+   Relative units (%, rem) already used throughout above
+   so elements resize naturally; below adjusts layout only.
+   --------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+
+    :root {
+        --font-h1: 1.85rem;
+        --font-h2: 1.5rem;
+        --font-h3: 1.15rem;
+    }
+
+    header {
+        padding: var(--space-md);
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Navigation menu adjustment: switch to a wrapped, centred menu */
+    nav {
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    main {
+        padding: var(--space-md);
+        gap: var(--space-md);
+    }
+
+    /* Layout adjustment: multi-column grids drop to a single column */
+    #courses-grid,
+    .card-grid,
+    .intro-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Images adjustment: hero/section images scale to full card width */
+    main img {
+        width: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   3.1 / 3.2  MOBILE BREAKPOINT (max-width: 480px)
+   --------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+
+    :root {
+        --font-h1: 1.5rem;
+        --font-h2: 1.3rem;
+        --font-h3: 1.05rem;
+        --font-base: 0.95rem;
+    }
+
+    header {
+        padding: var(--space-sm);
+    }
+
+    header img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    /* Navigation menu adjustment: stack links vertically for small screens */
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    main > section,
+    main > article {
+        padding: var(--space-sm);
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: var(--space-sm);
+    }
+}

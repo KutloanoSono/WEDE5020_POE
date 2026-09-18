@@ -102,6 +102,17 @@ HTML5 is the main technology used to create the website. HTML is used to structu
 - `<ul>`
 - `<ol>`
 
+**CSS3**
+
+CSS3 is used in Part 2 to style and add responsive behaviour to the website. The external stylesheet `css_assets/style.css` is linked to all five pages and includes:
+
+- A CSS reset and base/default styles (colour scheme, font family, margin/padding).
+- Typography styles using a `rem`-based type scale for consistent, accessible text sizing.
+- Layout structure built with Flexbox (header and navigation) and CSS Grid (course cards, About Us mission/vision/values, and the home page introduction).
+- Decorative and colour styling (borders, background colours, box-shadows) applied consistently across pages.
+- Pseudo-classes (`:hover`, `:focus`, `:active`) on navigation links, in-page links, form fields, and buttons for interactive feedback.
+- Responsive design using media queries at `768px` (tablet) and `480px` (mobile) breakpoints, relative units (`%`, `rem`), and responsive image sizing.
+
 
 ## File and Folder Structure
 
@@ -114,6 +125,8 @@ projectwebdev/
 │   ├── large picture.jpeg
 │   ├── small picture.jpeg
 │   └── coding picture.jpg
+├── css_assets/
+│   └── style.css
 ├── index.html
 ├── about.html
 ├── courses.html
@@ -122,7 +135,7 @@ projectwebdev/
 └── README.md
 ```
 
-CSS and JavaScript folders (`css_assets`, `js_assets`) will be added in Part 2 and Part 3 of this project.
+The `css_assets` folder was added in Part 2 and contains the external stylesheet (`style.css`) linked to all five HTML pages. A `js_assets` folder will be added in Part 3 of this project.
 
 
 ## Sitemap
@@ -155,25 +168,90 @@ All five pages share a consistent header, navigation menu, and footer. Every pag
 | Navigation tested across all pages | Complete |
 | README.md compiled | Complete |
 | GitHub repository set up and pushed | Complete |
+| Part 1 feedback reviewed and corrections implemented | Complete |
+| External stylesheet (`style.css`) created and linked to all pages | Complete |
+| Base styles, typography, layout, decoration and colour applied | Complete |
+| Pseudo-classes added to interactive elements | Complete |
+| Responsive design implemented (media queries, relative units, responsive images) | Complete |
+| Website tested across desktop, tablet and mobile screen sizes | Complete |
+| README updated with Part 2 changelog | Complete |
+| Part 2 changes committed and pushed to GitHub | Complete |
 
 
 ## Part 1 Details
 
-This README currently documents Part 1 of the WEDE5020 POE, covering:
+Part 1 of the WEDE5020 POE covered:
 
 - Website project proposal
 - Target audience and website goals/objectives
 - Website structure and planning (sitemap, wireframes, file structure)
 - Initial HTML5 structure and basic content for all five pages
 
-Part 2 and Part 3 (CSS styling, JavaScript functionality, and further refinement) will follow in future submissions/edits to this repository and README.
+Part 3 (JavaScript functionality and further refinement) will follow in a future submission/edit to this repository and README.
+
+
+## Working Through Feedback From Part 1
+
+Following the release of marks and feedback for Part 1, the corrections/improvements below were implemented for Part 2. Each edit is also recorded in the Changelog section below.
+
+| Feedback Received (Part 1) | Change Made in Part 2 |
+|---|---|
+| *[Insert lecturer feedback point 1]* | *[Insert what was changed/corrected]* |
+| *[Insert lecturer feedback point 2]* | *[Insert what was changed/corrected]* |
+| *[Insert lecturer feedback point 3]* | *[Insert what was changed/corrected]* |
+
+> **Action needed:** Replace the placeholder rows above with the actual feedback received on Part 1 and the specific corrections made, so the lecturer can see exactly what was addressed.
+
+
+## Part 2 Details
+
+Part 2 of the WEDE5020 POE covers:
+
+- Reviewing and implementing corrections from Part 1 feedback (see table above).
+- Creating an external CSS stylesheet (`css_assets/style.css`) and linking it to all five HTML pages.
+- Applying a base/default style, typography styles, layout structure (Flexbox and CSS Grid), and decorative/colour styling for the desktop version of the site.
+- Using pseudo-classes (`:hover`, `:focus`, `:active`) to make navigation links, in-page links, form fields, and buttons interactive.
+- Implementing responsive design for tablet and mobile using media queries, relative units (`%`, `rem`), and responsive image sizing.
+- Testing the website across different screen sizes using browser developer tools.
+
+### Screenshot Evidence of Responsive Testing
+
+Screenshots below were taken using browser developer tools (device toolbar) on the Home page, confirming the layout, navigation and typography adjust correctly at each breakpoint.
+
+**Desktop (1440px width)**
+
+![Home page - desktop view](images_/screenshots/home-desktop-1440.png)
+
+**Tablet (768px width)**
+
+![Home page - tablet view](images_/screenshots/home-tablet-768.png)
+
+At the 768px tablet breakpoint, the two-column introduction layout collapses to a single column and the page padding tightens, as defined in the tablet media query.
+
+**Mobile (375px width)**
+
+![Home page - mobile view](images_/screenshots/home-mobile-375.png)
+
+At the 375px mobile breakpoint, the navigation menu stacks vertically, images scale to full width, and font sizes reduce, as defined in the mobile media query.
 
 
 ## Changelog
 
 ### [Unreleased]
-- Planning for CSS styling (Part 2)
-- Planning for JavaScript form validation (Part 2/3)
+- Planning for JavaScript form validation (Part 3)
+
+### [2.0.0] - [Insert date]
+- Reviewed Part 1 feedback and implemented corrections (see "Working Through Feedback From Part 1" section above).
+- Created external stylesheet `css_assets/style.css` and linked it to all five HTML pages (`index.html`, `about.html`, `courses.html`, `enquiry.html`, `contact.html`).
+- Added a CSS reset and default/base styles (colour scheme, font family, font size, margin/padding).
+- Applied typography styles (`font-family`, `font-size`, `font-weight`, `line-height`, `letter-spacing`) using a `rem`-based type scale.
+- Built layout structure with Flexbox for the header/navigation and CSS Grid for the course cards (`courses.html`), the About Us mission/vision/values cards (`about.html`), and the home page introduction (`index.html`).
+- Applied decorative and colour styling (borders, background colours, box-shadows) consistently across all pages.
+- Added pseudo-classes (`:hover`, `:focus`, `:active`) to navigation links, in-page links, form inputs, and buttons for interactive feedback.
+- Implemented responsive design with media queries at `768px` (tablet) and `480px` (mobile) breakpoints, relative units (`%`, `rem`), and responsive image sizing.
+- Restructured the navigation menu and image sizing to adapt across desktop, tablet, and mobile screen widths.
+- Tested the website using browser developer tools across desktop, tablet, and mobile screen sizes.
+- Updated README with Part 2 details, changelog entries, and CSS-related references.
 
 ### [1.0.0] - [Insert date]
 - Initial creation of five HTML pages: `index.html`, `about.html`, `courses.html`, `enquiry.html`, `contact.html`
@@ -205,6 +283,18 @@ World Wide Web Consortium (W3C), 2026. *WAI-ARIA.* [online] Available at: <https
 MDN Web Docs, 2026. *HTML: Hypertext Markup Language.* [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML> [Accessed 14 August 2026].
 
 Google, 2026. *Web fundamentals.* [online] Available at: <https://developers.google.com/web> [Accessed 14 August 2026].
+
+W3Schools, 2026. *CSS Tutorial.* [online] Available at: <https://www.w3schools.com/css/> [Accessed 15 September 2026].
+
+MDN Web Docs, 2026. *CSS: Cascading Style Sheets.* [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS> [Accessed 15 September 2026].
+
+MDN Web Docs, 2026. *CSS Flexible Box Layout.* [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout> [Accessed 15 September 2026].
+
+MDN Web Docs, 2026. *CSS Grid Layout.* [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout> [Accessed 15 September 2026].
+
+MDN Web Docs, 2026. *Using media queries.* [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries> [Accessed 15 September 2026].
+
+World Wide Web Consortium (W3C), 2026. *CSS.* [online] Available at: <https://www.w3.org/Style/CSS/> [Accessed 15 September 2026].
 
 ### Image References
 
