@@ -136,6 +136,8 @@ header {
 header img {
     flex-shrink: 0;
     border: 3px solid var(--colour-accent);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 header p {
